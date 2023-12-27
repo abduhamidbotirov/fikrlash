@@ -1,7 +1,6 @@
-export interface IAd {
+export interface IPost {
     id?: number;
     title: string;
-    img_link: string;
     description: string;
-    url: string;
+    img:string |null;
 }

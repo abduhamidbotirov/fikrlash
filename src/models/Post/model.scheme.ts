@@ -1,9 +1,8 @@
 import { DataTypes, Model, Sequelize } from 'sequelize';
 import { sequelize } from '../../db/localSequelize.js';
-import { IAd } from './model.interface';
-// IUser interfaceni təyin edirik
-const Ad = sequelize.define<Model<IAd>>(
-    'ads',
+import { IPost } from './model.interface.js';
+const Post = sequelize.define<Model<IPost>>(
+    'posts',
     {
         id: {
             type: DataTypes.BIGINT,
@@ -14,18 +13,14 @@ const Ad = sequelize.define<Model<IAd>>(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        img_link: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
         description: {
-            type: DataTypes.STRING,
-            allowNull: false,
+            type: DataTypes.TEXT,
+            allowNull: true,
         },
-        url: {
-            type: DataTypes.STRING,
-            allowNull: false,
+        img: {
+            type: DataTypes.TEXT,
+            allowNull: true,
         },
     }
 );
-export default Ad;
+export default Post; 

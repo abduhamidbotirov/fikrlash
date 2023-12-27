@@ -1,19 +1,13 @@
-import { DataTypes, Model, Sequelize } from 'sequelize';
+import { DataTypes, Model } from 'sequelize';
 import { sequelize } from '../../db/localSequelize.js';
 import { IPostComment } from './model.interface.js';
-import { minLength } from 'class-validator';
-// IUser interfaceni təyin edirik
 const PostComment = sequelize.define<Model<IPostComment>>(
-    'postcomment',
+    'comments',
     {
         id: {
             type: DataTypes.BIGINT,
             primaryKey: true,
             autoIncrement: true,
-        },
-        user_id: {
-            type: DataTypes.BIGINT,
-            allowNull: false,
         },
         post_id: {
             type: DataTypes.BIGINT,

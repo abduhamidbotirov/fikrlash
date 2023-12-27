@@ -20,10 +20,10 @@ export const sequelize = new Sequelize({
   try {
     // Ma'lumotlar bazasiga ulanamiz
     await sequelize.authenticate();
-    // await sequelize.sync();
-    for (let model in sequelize.models) {
-      await sequelize.models[model].sync({ force: true })
-    }
+    // await sequelize.sync(); 
+    // for (let model in sequelize.models) {
+    //   await sequelize.models[model].sync({ force: true })
+    // }
     // await sequelize.sync({alter: true,});
     // await sequelize.sync({force: true,});
     console.log('Ma\'lumotlar bazasiga muvaffaqiyatli ulandik');
